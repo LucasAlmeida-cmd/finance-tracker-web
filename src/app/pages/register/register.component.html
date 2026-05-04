@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div style="display: flex; justify-content: center; align-items: center; min-height: 90vh; padding: 2rem;">
+  <div style="background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); width: 100%; max-width: 500px;">
+    <h2 style="margin-bottom: 0.5rem; font-size: 1.8rem;">Comece sua jornada</h2>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">Cadastre-se para organizar suas finanças hoje mesmo.</p>
+    
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
+      <div style="grid-column: span 2; display: flex; flex-direction: column; gap: 0.4rem;">
+        <label style="font-weight: 600; font-size: 0.9rem;">Nome Completo</label>
+        <input type="text" formControlName="name" placeholder="Seu nome" style="background: #f1f5f9; border: none; padding: 1rem; border-radius: 10px;">
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+        <label style="font-weight: 600; font-size: 0.9rem;">CPF</label>
+        <input type="text" formControlName="cpf" placeholder="000.000.000-00" style="background: #f1f5f9; border: none; padding: 1rem; border-radius: 10px;">
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+        <label style="font-weight: 600; font-size: 0.9rem;">E-mail</label>
+        <input type="email" formControlName="email" placeholder="exemplo@email.com" style="background: #f1f5f9; border: none; padding: 1rem; border-radius: 10px;">
+      </div>
+
+      <div style="grid-column: span 2; display: flex; flex-direction: column; gap: 0.4rem;">
+        <label style="font-weight: 600; font-size: 0.9rem;">Senha</label>
+        <input type="password" formControlName="password" placeholder="No mínimo 6 caracteres" style="background: #f1f5f9; border: none; padding: 1rem; border-radius: 10px;">
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="grid-column: span 2; margin-top: 1rem; padding: 1rem;">Finalizar meu cadastro</button>
+      <a routerLink="/login" style="grid-column: span 2; text-align: center; color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Já possui uma conta? <span style="color: var(--primary); font-weight: 600;">Faça login</span></a>
+    </form>
+  </div>
+</div>

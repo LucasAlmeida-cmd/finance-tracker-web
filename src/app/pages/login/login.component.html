@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div style="display: flex; justify-content: center; align-items: center; min-height: 80vh; padding: 2rem;">
+  <div style="background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); width: 100%; max-width: 450px;">
+    <h2 style="margin-bottom: 0.5rem; font-size: 1.8rem;">Olá novamente!</h2>
+    <p style="color: var(--text-muted); margin-bottom: 2rem;">Insira seus dados para acessar sua conta.</p>
+    
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" style="display: flex; flex-direction: column; gap: 1.2rem;">
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <label style="font-weight: 600; font-size: 0.9rem;">E-mail</label>
+        <input type="email" formControlName="email" placeholder="nome@email.com" style="background: #f1f5f9; border: none; padding: 1rem; border-radius: 10px;">
+      </div>
+      
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <label style="font-weight: 600; font-size: 0.9rem;">Senha</label>
+        <input type="password" formControlName="password" placeholder="••••••••" style="background: #f1f5f9; border: none; padding: 1rem; border-radius: 10px;">
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="margin-top: 1rem; padding: 1rem;">Entrar na plataforma</button>
+      <p style="text-align: center; color: var(--text-muted);">Novo por aqui? <a routerLink="/register" style="color: var(--primary); font-weight: 600; text-decoration: none;">Crie uma conta</a></p>
+    </form>
+  </div>
+</div>
