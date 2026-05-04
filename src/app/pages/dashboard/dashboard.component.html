@@ -1,0 +1,43 @@
+<app-header></app-header>
+
+<div class="dashboard-wrapper" style="padding: 2rem 10%;">
+  <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+    <h1>Olá, Lucas! 👋</h1>
+    <button class="btn btn-outline" (click)="logout()">Sair</button>
+  </header>
+
+  <!-- Cards de Resumo -->
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+    <div style="background: white; padding: 1.5rem; border-radius: 15px; border-left: 5px solid #10b981;">
+      <p style="color: var(--text-muted); margin: 0;">Saldo Total</p>
+      <h2 style="margin: 0.5rem 0;">R$ 12.550,00</h2>
+    </div>
+    <div style="background: white; padding: 1.5rem; border-radius: 15px; border-left: 5px solid #ef4444;">
+      <p style="color: var(--text-muted); margin: 0;">Gastos no Mês</p>
+      <h2 style="margin: 0.5rem 0;">R$ 3.200,00</h2>
+    </div>
+  </div>
+
+  <!-- Tabela de Transações Recentes -->
+  <section style="background: white; border-radius: 15px; padding: 2rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+    <h3 style="margin-top: 0;">Transações Recentes</h3>
+    <table style="width: 100%; border-collapse: collapse;">
+      <thead>
+        <tr style="text-align: left; border-bottom: 2px solid #f1f5f9;">
+          <th style="padding: 1rem;">Data</th>
+          <th style="padding: 1rem;">Descrição</th>
+          <th style="padding: 1rem;">Categoria</th>
+          <th style="padding: 1rem;">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #f1f5f9;">
+          <td style="padding: 1rem;">04/05/2026</td>
+          <td style="padding: 1rem;">Assinatura Azure</td>
+          <td style="padding: 1rem;"><span style="background: #dbeafe; color: #1e40af; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.8rem;">Tecnologia</span></td>
+          <td style="padding: 1rem; color: #ef4444; font-weight: bold;">- R$ 150,00</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
