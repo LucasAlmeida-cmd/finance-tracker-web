@@ -1,6 +1,6 @@
 export interface LoginRequest {
   email: string;
-  password?: string;
+  senha?: string;
 }
 
 export interface UserRegisterRequest {
@@ -8,10 +8,17 @@ export interface UserRegisterRequest {
   cpf: string;
   email: string;
   password?: string;
+  dataAniversario?: Date;
 }
 
 export interface AuthResponse {
   token: string;
   type: string;
   email: string;
+}
+
+
+export interface UserResponse {
+  email: string;
+  nome: string;
 }

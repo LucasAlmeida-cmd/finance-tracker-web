@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [HeaderComponent, CommonModule],
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css'] 
+  styleUrls: ['./dashboard.css'] 
 })
 export class DashboardComponent implements OnInit {
   userName: string = 'Usuário';

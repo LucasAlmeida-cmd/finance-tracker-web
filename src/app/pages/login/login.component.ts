@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { Router, RouterLink } from '@angular/router';
 import { HeaderComponent } from '../../components/header/header.component';
 import { AuthService } from '../../services/auth.service';
+import { UserResponse } from '../../models/auth.model';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,8 @@ import { AuthService } from '../../services/auth.service';
   imports: [ReactiveFormsModule, HeaderComponent, RouterLink],
   templateUrl: './login.component.html'
 })
+
+
 export class LoginComponent {
   loginForm: FormGroup;
 
@@ -20,15 +23,16 @@ export class LoginComponent {
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+      senha: ['', Validators.required]
     });
   }
+
   onLogin() {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe({
-        next: (response) => {
+        next: (response: UserResponse) => {
           console.log('Login realizado com sucesso!', response);
-          localStorage.setItem('token', response.token);
+          localStorage.setItem('user_info', JSON.stringify(response));
           this.router.navigate(['/dashboard']); 
         },
         error: (err) => {
