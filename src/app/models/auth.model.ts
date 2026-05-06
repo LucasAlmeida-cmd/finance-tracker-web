@@ -4,11 +4,11 @@ export interface LoginRequest {
 }
 
 export interface UserRegisterRequest {
-  name: string;
+  nome: string;
   cpf: string;
   email: string;
-  password?: string;
-  dataAniversario?: Date;
+  senha?: string;
+  dataAniversario?: string;
 }
 
 export interface AuthResponse {

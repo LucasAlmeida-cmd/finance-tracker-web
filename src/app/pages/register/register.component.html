@@ -7,7 +7,7 @@
     <form [formGroup]="registerForm" (ngSubmit)="onRegister()" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
       <div style="grid-column: span 2; display: flex; flex-direction: column; gap: 0.4rem;">
         <label style="font-weight: 600; font-size: 0.9rem;">Nome Completo</label>
-        <input type="text" formControlName="name" placeholder="Seu nome" style="background: #f1f5f9; border: none; padding: 1rem; border-radius: 10px;">
+        <input type="text" formControlName="nome" placeholder="Seu nome" style="background: #f1f5f9; border: none; padding: 1rem; border-radius: 10px;">
       </div>
 
       <div style="display: flex; flex-direction: column; gap: 0.4rem;">
@@ -28,7 +28,7 @@
 
       <div style="grid-column: span 2; display: flex; flex-direction: column; gap: 0.4rem;">
         <label style="font-weight: 600; font-size: 0.9rem;">Senha</label>
-        <input type="password" formControlName="password" placeholder="No mínimo 6 caracteres" style="background: #f1f5f9; border: none; padding: 1rem; border-radius: 10px;">
+        <input type="password" formControlName="senha" placeholder="No mínimo 6 caracteres" style="background: #f1f5f9; border: none; padding: 1rem; border-radius: 10px;">
       </div>
 
       <button type="submit" class="btn btn-primary" style="grid-column: span 2; margin-top: 1rem; padding: 1rem;">Finalizar meu cadastro</button>

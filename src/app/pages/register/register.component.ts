@@ -19,17 +19,25 @@ export class RegisterComponent {
     private router: Router
   ) {
     this.registerForm = this.fb.group({
-      name: ['', Validators.required],
+      nome: ['', Validators.required],
       cpf: ['', [Validators.required, Validators.minLength(11)]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      senha: ['', [Validators.required, Validators.minLength(6)]],
       dataAniversario: ['', Validators.required]
     });
   }
 
   onRegister() {
     if (this.registerForm.valid) {
-      this.authService.register(this.registerForm.value).subscribe({
+      const dadosParaEnviar = { ...this.registerForm.value };
+    
+      if (dadosParaEnviar.dataAniversario) {
+        const [ano, mes, dia] = dadosParaEnviar.dataAniversario.split('-');
+        dadosParaEnviar.dataAniversario = `${dia}/${mes}/${ano}`;
+      }
+
+      
+      this.authService.register(dadosParaEnviar).subscribe({
         next: (response) => {
           console.log('Cadastro realizado com sucesso!', response);
           this.router.navigate(['/login']); 
