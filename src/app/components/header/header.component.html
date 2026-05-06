@@ -1,11 +1,28 @@
 <header style="position: sticky; top: 0; backdrop-filter: blur(10px); background: rgba(255,255,255,0.8); border-bottom: 1px solid rgba(0,0,0,0.05); z-index: 1000; padding: 1rem 10%;">
   <nav style="display: flex; justify-content: space-between; align-items: center;">
+    
+    
     <div style="font-size: 1.5rem; font-weight: 700; color: var(--primary); cursor: pointer;" routerLink="/">
       Finance<span style="color: var(--text-main);">Tracker</span>
     </div>
+
     <div style="display: flex; gap: 1.5rem; align-items: center;">
-      <a routerLink="/login" style="text-decoration: none; color: var(--text-muted); font-weight: 600;">Entrar</a>
-      <button class="btn btn-primary" routerLink="/register">Criar conta grátis</button>
+      
+      <ng-container *ngIf="!(isLoggedIn$ | async)">
+        <a routerLink="/login" style="text-decoration: none; color: var(--text-muted); font-weight: 600;">Entrar</a>
+        <button class="btn btn-primary" routerLink="/register">Criar conta grátis</button>
+      </ng-container>
+
+      <ng-container *ngIf="isLoggedIn$ | async">
+        <span style="color: var(--text-muted); font-size: 0.9rem; font-weight: 500;">
+          Olá, <strong>{{ userName }}</strong>
+        </span>
+        <a routerLink="/dashboard" style="text-decoration: none; color: var(--text-muted); font-weight: 600;">Meu Painel</a>
+        <button class="btn btn-outline" (click)="onLogout()" style="padding: 0.5rem 1rem; border: 1px solid var(--primary); color: var(--primary); background: transparent; border-radius: 8px; cursor: pointer; font-weight: 600;">
+          Sair
+        </button>
+      </ng-container>
+
     </div>
   </nav>
 </header>
